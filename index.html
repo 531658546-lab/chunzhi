@@ -205,6 +205,20 @@ td .u{color:var(--ink);white-space:nowrap}
 .tc-w{font-weight:700;font-size:16px;color:var(--ink)}
 .tc-t{font-size:14px;color:var(--qing-deep);font-weight:600;margin-top:2px}
 .tc-s{font-size:12.5px;color:var(--ink-dim);margin-top:4px;line-height:1.65}
+
+/* 折叠区 */
+.fold-btn{
+  display:flex;align-items:center;gap:8px;width:100%;
+  padding:11px 15px;border:1px solid var(--line);border-radius:12px;
+  background:var(--card-soft);color:var(--ink);
+  font-size:15px;font-weight:600;cursor:pointer;margin-bottom:10px;
+  transition:border-color .12s,background .12s;
+}
+.fold-btn:hover{border-color:var(--qing);background:var(--qing-pale)}
+.fold-arrow{margin-left:auto;color:var(--ink-dim);transition:transform .2s;font-size:13px}
+.fold-btn.open .fold-arrow{transform:rotate(90deg)}
+.fold-body{display:none;margin-bottom:10px}
+.fold-body.show{display:block}
 </style>
 </head>
 <body>
@@ -263,23 +277,42 @@ td .u{color:var(--ink);white-space:nowrap}
     <a class="item" href="https://m.bilibili.com/video/BV1z24h6xE7f" target="_blank" rel="noopener">
       <div class="item-t">【纯稚｜小半】“不应该 太心软 不大胆”<span class="tag">B站</span><span class="go">打开 ↗</span></div>
     </a>
-    <div class="item item-plain" style="margin-bottom:0">
-      <span class="item-t">🎵 抖音剪辑</span>
+    <button class="fold-btn" id="foldDy" type="button" aria-expanded="false" onclick="toggleFold('foldDy')">
+      <span class="fold-t">🎵 抖音剪辑</span>
+      <span class="fold-arrow">▸</span>
+    </button>
+    <div class="fold-body" id="foldDyBody">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>视频名称</th><th>链接</th><th>用户名</th></tr></thead>
+          <tbody>
+            <tr><td>【纯稚】“嫉妒到发疯”</td><td><a href="https://v.douyin.com/6uub_AnqR-c/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">海濑呆呆</td></tr>
+            <tr><td>【纯稚】“要你的灵魂跪下来”</td><td><a href="https://v.douyin.com/OZEVePw8DZM/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">满月伴航Lu</td></tr>
+            <tr><td>后会友期命定之曲</td><td><a href="https://v.douyin.com/P8lt1M8UXLc/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">呦呦鹿鸣</td></tr>
+            <tr><td>【纯稚】“鸿蒙生两仪，恨为爱之极”</td><td><a href="https://v.douyin.com/_G1ZE1ldPbM/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">半颗仙人球</td></tr>
+            <tr><td>像看了一集爱情公寓，已经开始舍不得完结了</td><td><a href="https://v.douyin.com/G-sMpSlUiHY/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">五一一</td></tr>
+            <tr><td>和小纯恋爱的条件是……</td><td><a href="https://v.douyin.com/lPA8vVXKTuo/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">用户3821142689</td></tr>
+            <tr><td>和小青稚恋爱的条件是……</td><td><a href="https://v.douyin.com/A4PRTZQO2cM/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">用户3821142689</td></tr>
+            <tr><td>【纯稚】爱你是我的秘密</td><td><a href="https://v.douyin.com/5AFNHYejNy4/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">苏莫Mm</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>视频名称</th><th>链接</th><th>用户名</th></tr></thead>
-        <tbody>
-          <tr><td>【纯稚】“嫉妒到发疯”</td><td><a href="https://v.douyin.com/6uub_AnqR-c/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">海濑呆呆</td></tr>
-          <tr><td>【纯稚】“要你的灵魂跪下来”</td><td><a href="https://v.douyin.com/OZEVePw8DZM/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">满月伴航Lu</td></tr>
-          <tr><td>后会友期命定之曲</td><td><a href="https://v.douyin.com/P8lt1M8UXLc/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">呦呦鹿鸣</td></tr>
-          <tr><td>【纯稚】“鸿蒙生两仪，恨为爱之极”</td><td><a href="https://v.douyin.com/_G1ZE1ldPbM/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">半颗仙人球</td></tr>
-          <tr><td>像看了一集爱情公寓，已经开始舍不得完结了</td><td><a href="https://v.douyin.com/G-sMpSlUiHY/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">五一一</td></tr>
-          <tr><td>和小纯恋爱的条件是……</td><td><a href="https://v.douyin.com/lPA8vVXKTuo/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">用户3821142689</td></tr>
-          <tr><td>和小青稚恋爱的条件是……</td><td><a href="https://v.douyin.com/A4PRTZQO2cM/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">用户3821142689</td></tr>
-          <tr><td>【纯稚】爱你是我的秘密</td><td><a href="https://v.douyin.com/5AFNHYejNy4/" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">苏莫Mm</td></tr>
-        </tbody>
-      </table>
+    <button class="fold-btn" id="foldXhs" type="button" aria-expanded="false" onclick="toggleFold('foldXhs')">
+      <span class="fold-t">📕 小红书</span>
+      <span class="fold-arrow">▸</span>
+    </button>
+    <div class="fold-body" id="foldXhsBody">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>笔记名称</th><th>链接</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>【诀别书】“恨得不彻底 爱得太艰难”</td><td><a href="https://xhslink.cn/o/7uqiFwNQztI" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">微虐向</td></tr>
+            <tr><td>哎。 哎。。。你。我。你们。。</td><td><a href="https://xhslink.cn/o/8CniiLa3QmA" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">剪辑得很好，微虐</td></tr>
+            <tr><td>纯稚｜雪落下的声音 感恩后会友期 感恩两个真诚的小孩</td><td><a href="https://xhslink.cn/o/90a8av1bVpU" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">时间线类型</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -292,19 +325,6 @@ td .u{color:var(--ink);white-space:nowrap}
       <div class="item-t">【纯稚】现在的网黄能不能有点职业操守<span class="tag">Asianfanfics</span><span class="go">打开 ↗</span></div>
       <div class="item-d summary">非常好看正宗，带第三人老伞也搞笑（介意勿入）</div>
     </a>
-    <div class="item item-plain" style="margin-bottom:0">
-      <span class="item-t">📕 小红书</span>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>笔记名称</th><th>链接</th><th>备注</th></tr></thead>
-        <tbody>
-          <tr><td>【诀别书】“恨得不彻底 爱得太艰难”</td><td><a href="https://xhslink.cn/o/7uqiFwNQztI" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">微虐向</td></tr>
-          <tr><td>哎。 哎。。。你。我。你们。。</td><td><a href="https://xhslink.cn/o/8CniiLa3QmA" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">剪辑得很好，微虐</td></tr>
-          <tr><td>纯稚｜雪落下的声音 感恩后会友期 感恩两个真诚的小孩</td><td><a href="https://xhslink.cn/o/90a8av1bVpU" target="_blank" rel="noopener">打开 ↗</a></td><td class="u">时间线类型</td></tr>
-        </tbody>
-      </table>
-    </div>
   </section>
 
 </main>
@@ -386,6 +406,15 @@ tcBtn.addEventListener('click', () => {
 });
 tcClose.addEventListener('click', closeOv);
 tcOv.addEventListener('click', e => { if(e.target === tcOv) closeOv(); });
+
+// 剪辑折叠区
+function toggleFold(id){
+  const btn = document.getElementById(id);
+  const body = document.getElementById(id + 'Body');
+  const open = body.classList.toggle('show');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
 </script>
 </body>
 </html>
