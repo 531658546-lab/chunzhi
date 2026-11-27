@@ -215,6 +215,7 @@ td .u{color:var(--ink);white-space:nowrap}
   transition:border-color .12s,background .12s;
 }
 .fold-btn:hover{border-color:var(--qing);background:var(--qing-pale)}
+.fold-sub{font-size:12px;color:var(--ink-dim);font-weight:400}
 .fold-arrow{margin-left:auto;color:var(--ink-dim);transition:transform .2s;font-size:13px}
 .fold-btn.open .fold-arrow{transform:rotate(90deg)}
 .fold-body{display:none;margin-bottom:10px}
@@ -249,16 +250,19 @@ td .u{color:var(--ink);white-space:nowrap}
       <div class="item-t">春知网<span class="tag">官网</span><span class="go">打开 ↗</span></div>
       <div class="item-d">纯稚学术交流平台</div>
     </a>
-    <div class="item item-plain" style="margin-bottom:10px">
-      <span class="item-t">恋爱ing</span>
-      <span class="item-d" style="margin-top:0">时间线复盘</span>
+    <button class="fold-btn" id="foldTimeline" type="button" aria-expanded="false" onclick="toggleFold('foldTimeline')">
+      <span class="fold-t">恋爱ing</span>
+      <span class="fold-sub">时间线复盘</span>
+      <span class="fold-arrow">▸</span>
+    </button>
+    <div class="fold-body" id="foldTimelineBody">
+      <a class="item" href="https://www.douban.com/doubanapp/dispatch?uri=%2Fgroup%2Ftopic%2F506935574%3F_spm_id%3DMjM0MzM5MzUy&amp;_i=95762734e388256" target="_blank" rel="noopener">
+        <div class="item-t">青训时间线〖2020—2022〗<span class="tag">豆瓣</span><span class="go">打开 ↗</span></div>
+      </a>
+      <a class="item" href="https://www.douban.com/doubanapp/dispatch?uri=%2Fgroup%2Ftopic%2F497646151%3F_spm_id%3DMjI0NTQ0MDc0&amp;_i=95762488e388256" target="_blank" rel="noopener">
+        <div class="item-t">再见朋友时间线<span class="tag">豆瓣</span><span class="go">打开 ↗</span></div>
+      </a>
     </div>
-    <a class="item" href="https://www.douban.com/doubanapp/dispatch?uri=%2Fgroup%2Ftopic%2F506935574%3F_spm_id%3DMjM0MzM5MzUy&amp;_i=95762734e388256" target="_blank" rel="noopener">
-      <div class="item-t">青训时间线〖2020—2022〗<span class="tag">豆瓣</span><span class="go">打开 ↗</span></div>
-    </a>
-    <a class="item" href="https://www.douban.com/doubanapp/dispatch?uri=%2Fgroup%2Ftopic%2F497646151%3F_spm_id%3DMjI0NTQ0MDc0&amp;_i=95762488e388256" target="_blank" rel="noopener">
-      <div class="item-t">再见朋友时间线<span class="tag">豆瓣</span><span class="go">打开 ↗</span></div>
-    </a>
   </section>
 
   <section class="card">
